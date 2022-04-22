@@ -15,7 +15,7 @@ public class CreateAccountSteps {
     WebDriver driver;
     @Step
     public void openSite(){
-        System.setProperty ("chromedriver","C:/Users/David/OneDrive/Documentos/Automation_Trainner/NewReport//automation_frmk_web/src/test/resources/drivers");
+        System.setProperty("chromedriver","C:/Users/David/OneDrive/Documentos/Automation_Trainner/NewReport/automation_frmk_web/src/test/resources/drivers");
         driver= new ChromeDriver();
         driver.get("https://es.surveymonkey.com/");
         //createAccount.open();
