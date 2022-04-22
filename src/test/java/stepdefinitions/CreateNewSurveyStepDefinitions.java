@@ -3,7 +3,7 @@ package stepdefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 
-public class CreateNewSurveyStepdefs {
+public class CreateNewSurveyStepDefinitions {
     @And("I click on create survey button")
     public void iClickOnCreateSurveyButton() {
     }

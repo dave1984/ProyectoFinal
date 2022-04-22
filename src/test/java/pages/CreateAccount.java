@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 public class CreateAccount extends PageObject {
 
 
-    @FindBy(xpath = "//*[@id='root']/div/div[1]/div/div[3]/div/a[2]")
+    @FindBy(xpath = "//div[@class='wds-button  wds-button--upgrade  wds-button--solid  wds-button--sm    ']")
     private WebElementFacade subscribe;
 
     @FindBy(xpath = "//input[@name='username']")
@@ -29,6 +29,9 @@ public class CreateAccount extends PageObject {
 
     @FindBy(xpath = "//button[@name='submitBtn']")
     private WebElementFacade submitBtn;
+
+    @FindBy(xpath = "//button[@class='mm-menu__nav-button']")
+    private WebElementFacade userNameDisplayed;
 
 
     public WebElementFacade getSubscribe() {
@@ -56,5 +59,7 @@ public class CreateAccount extends PageObject {
     public WebElementFacade getSubmitBtn() {
         return submitBtn;
     }
+
+    public WebElementFacade getUserNameDisplayed(){return userNameDisplayed;}
 
 }
