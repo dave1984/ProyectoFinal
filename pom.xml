@@ -65,6 +65,12 @@
             <artifactId>webdrivermanager</artifactId>
             <version>5.0.3</version>
         </dependency>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-core</artifactId>
+            <version>3.2.1</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 
