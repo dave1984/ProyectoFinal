@@ -3,63 +3,66 @@ package pages;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-@DefaultUrl("https://es.surveymonkey.com/")
-public class CreateAccount extends PageObject {
+
+//@DefaultUrl("https://es.surveymonkey.com/")
+public class CreateAccount {
+
 
 
     @FindBy(xpath = "//div[@class='wds-button  wds-button--upgrade  wds-button--solid  wds-button--sm    ']")
-    private WebElementFacade subscribe;
+    private WebElement subscribe;
 
     @FindBy(xpath = "//input[@name='username']")
-    private WebElementFacade userName;
+    private WebElement userName;
 
     @FindBy(xpath = "//input[@name='password']")
-    private WebElementFacade password;
+    private WebElement password;
 
     @FindBy(xpath = "//input[@name='email']")
-    private WebElementFacade email;
+    private WebElement email;
 
     @FindBy(xpath = "//input[@name='first_name']")
-    private WebElementFacade first_name;
+    private WebElement first_name;
 
     @FindBy(xpath = "//input[@name='last_name']")
-    private WebElementFacade last_name;
+    private WebElement last_name;
 
     @FindBy(xpath = "//button[@name='submitBtn']")
-    private WebElementFacade submitBtn;
+    private WebElement submitBtn;
 
     @FindBy(xpath = "//button[@class='mm-menu__nav-button']")
-    private WebElementFacade userNameDisplayed;
+    private WebElement userNameDisplayed;
 
 
-    public WebElementFacade getSubscribe() {
+    public WebElement getSubscribe() {
         return subscribe;
     }
 
-    public WebElementFacade getUserName() { return userName; }
+    public WebElement getUserName() { return userName; }
 
-    public WebElementFacade getPassword() {
+    public WebElement getPassword() {
         return password;
     }
 
-    public WebElementFacade getEmail() {
+    public WebElement getEmail() {
         return email;
     }
 
-    public WebElementFacade getFirst_name() {
+    public WebElement getFirst_name() {
         return first_name;
     }
 
-    public WebElementFacade getLast_name() {
+    public WebElement getLast_name() {
         return last_name;
     }
 
-    public WebElementFacade getSubmitBtn() {
+    public WebElement getSubmitBtn() {
         return submitBtn;
     }
 
-    public WebElementFacade getUserNameDisplayed(){return userNameDisplayed;}
+    public WebElement getUserNameDisplayed(){return userNameDisplayed;}
 
 }

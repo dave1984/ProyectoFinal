@@ -3,16 +3,22 @@ package steps;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import pages.CreateAccount;
 import utilities.Utilities;
 
 public class CreateAccountSteps {
 
     CreateAccount createAccount;
-
+    WebDriver driver;
     @Step
     public void openSite(){
-        createAccount.open();
+        System.setProperty ("chromedriver","C:/Users/David/OneDrive/Documentos/Automation_Trainner/NewReport//automation_frmk_web/src/test/resources/drivers");
+        driver= new ChromeDriver();
+        driver.get("https://es.surveymonkey.com/");
+        //createAccount.open();
     }
 
     @Step
@@ -50,7 +56,7 @@ public class CreateAccountSteps {
         createAccount.getSubmitBtn().sendKeys(Keys.ENTER);
     }
     @Step
-    public WebElementFacade userNameDisplayed(){
+    public WebElement userNameDisplayed(){
         return createAccount.getUserNameDisplayed();
     }
 

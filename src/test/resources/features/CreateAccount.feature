@@ -1,6 +1,6 @@
 Feature: Create an account
 
-  @test
+
   Scenario: Open the new site
     Given I open the site into the browser
     When I click on subscribe button

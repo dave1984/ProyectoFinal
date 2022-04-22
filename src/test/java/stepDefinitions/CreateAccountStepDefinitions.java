@@ -1,12 +1,12 @@
-package stepdefinitions;
+package stepDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 import steps.CreateAccountSteps;
 import utilities.Utilities;
 
@@ -23,7 +23,7 @@ public class CreateAccountStepDefinitions {
 
     @Then("I should see create account page")
     public void iShouldSeeCreateAccountPage() {
-        WebElementFacade userNameDisplayed = createAccountSteps.userNameDisplayed();
+        WebElement userNameDisplayed = createAccountSteps.userNameDisplayed();
        Assert.assertEquals(userNameDisplayed,Utilities.randomUserName());
     }
 
