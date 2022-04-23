@@ -1,12 +1,12 @@
 Feature: Create an account
 
-
+  @SmokeTest
   Scenario: Open the new site
     Given I open the site into the browser
     When I click on subscribe button
     Then I should see create account page
 
-
+  @Test
    Scenario: Create a new account
     Given I open the site into the browser
     When I click on subscribe button

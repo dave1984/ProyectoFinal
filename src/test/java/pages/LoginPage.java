@@ -1,8 +1,10 @@
 package pages;
 
-import net.serenitybdd.core.pages.WebElementFacade;
+//import net.serenitybdd.core.pages.WebElementFacade;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
@@ -25,4 +27,9 @@ public class LoginPage {
     public WebElement getInitSession() {
         return initSession;
     }
+
+    public LoginPage(WebDriver driver) {
+        PageFactory.initElements(driver, this);
+    }
+
 }

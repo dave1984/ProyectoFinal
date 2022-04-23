@@ -4,16 +4,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import net.serenitybdd.core.pages.PageObject;
-import net.thucydides.core.annotations.DefaultUrl;
+//import net.serenitybdd.core.pages.PageObject;
+//import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.By;
 
-@DefaultUrl("https://www.google.com")
-public class CreateAccount extends PageObject{
+//@DefaultUrl("https://www.google.com")
+public class CreateAccount {
 
    // private String baseURL ="https://es.surveymonkey.com/";
 
-    @FindBy(xpath = "//div[@class='wds-button  wds-button--upgrade  wds-button--solid  wds-button--sm    ']")
+    @FindBy(xpath = "//*[@id='root']/div/div[1]/div/div[3]/div/a[2]")
     private WebElement subscribe;
 
     @FindBy(xpath = "//input[@name='username']")
@@ -77,16 +77,10 @@ public class CreateAccount extends PageObject{
         String text1 = textDisplayed.getText();
         return text1;
     }
-   /* public CreateAccount(WebDriver driver) {
-        super(driver);
+
+   public CreateAccount(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
-    public CreateAccount goToThePage() {
-        driver.get(baseURL);
-        return this;
 
-    }
-
-    */
 
 }

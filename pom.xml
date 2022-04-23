@@ -12,14 +12,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8.0_321</java.version>
         <junit.version>1.8.0_321</junit.version>
-        <serenity.version>2.3.2</serenity.version>
-        <serenity.maven.version>2.3.2</serenity.maven.version>
-        <serenity.cucumber.version>2.3.2</serenity.cucumber.version>
         <encoding>UTF-8</encoding>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <tags></tags>
-        <webdriver.base.url></webdriver.base.url>
     </properties>
 
     <repositories>
@@ -174,46 +169,20 @@
             <version>2.0.2-beta</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-core</artifactId>
-            <version>3.2.1</version>
-            <scope>test</scope>
-        </dependency>
 
-
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.9</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>1.6.1</version>
-        </dependency>
-        <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-core</artifactId>
-            <version>2.0.54</version>
-        </dependency>
-        <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-junit</artifactId>
-            <version>2.0.54</version>
-        </dependency>
-        <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-reports</artifactId>
-            <version>2.0.54</version>
-        </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-plugin-api</artifactId>
             <version>3.6.1</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/net.thucydides/thucydides-core -->
+        <dependency>
+            <groupId>net.thucydides</groupId>
+            <artifactId>thucydides-core</artifactId>
+            <version>0.9.275</version>
+        </dependency>
+
 
     </dependencies>
 
