@@ -1,5 +1,6 @@
 package steps;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.Keys;
@@ -12,14 +13,8 @@ import utilities.Utilities;
 public class CreateAccountSteps {
 
     CreateAccount createAccount;
-    WebDriver driver;
     @Step
-    public void openSite(){
-        System.setProperty("chromedriver","C:/Users/David/OneDrive/Documentos/Automation_Trainner/NewReport/automation_frmk_web/src/test/resources/drivers");
-        driver= new ChromeDriver();
-        driver.get("https://es.surveymonkey.com/");
-        //createAccount.open();
-    }
+    public void openSite(){ createAccount.goToThePage();  }
 
     @Step
     public void clickOnSubscribeButton(){

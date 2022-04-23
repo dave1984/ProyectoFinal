@@ -1,16 +1,14 @@
 package pages;
 
-import net.serenitybdd.core.pages.PageObject;
-import net.serenitybdd.core.pages.WebElementFacade;
-import net.thucydides.core.annotations.DefaultUrl;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 
-//@DefaultUrl("https://es.surveymonkey.com/")
-public class CreateAccount {
+public class CreateAccount extends BasePage{
 
-
+    private String baseURL = "https://es.surveymonkey.com";
 
     @FindBy(xpath = "//div[@class='wds-button  wds-button--upgrade  wds-button--solid  wds-button--sm    ']")
     private WebElement subscribe;
@@ -36,6 +34,15 @@ public class CreateAccount {
     @FindBy(xpath = "//button[@class='mm-menu__nav-button']")
     private WebElement userNameDisplayed;
 
+    public CreateAccount(WebDriver driver) {
+        super(driver);
+        PageFactory.initElements(driver, this);
+    }
+
+    public CreateAccount goToThePage() {
+        driver.get(baseURL);
+        return this;
+    }
 
     public WebElement getSubscribe() {
         return subscribe;
@@ -64,5 +71,6 @@ public class CreateAccount {
     }
 
     public WebElement getUserNameDisplayed(){return userNameDisplayed;}
+
 
 }
