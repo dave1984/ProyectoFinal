@@ -4,11 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import net.serenitybdd.core.pages.PageObject;
+import net.thucydides.core.annotations.DefaultUrl;
+import org.openqa.selenium.By;
 
+@DefaultUrl("https://www.google.com")
+public class CreateAccount extends PageObject{
 
-public class CreateAccount extends BasePage{
-
-    private String baseURL = "https://es.surveymonkey.com";
+   // private String baseURL ="https://es.surveymonkey.com/";
 
     @FindBy(xpath = "//div[@class='wds-button  wds-button--upgrade  wds-button--solid  wds-button--sm    ']")
     private WebElement subscribe;
@@ -31,18 +34,11 @@ public class CreateAccount extends BasePage{
     @FindBy(xpath = "//button[@name='submitBtn']")
     private WebElement submitBtn;
 
-    @FindBy(xpath = "//button[@class='mm-menu__nav-button']")
-    private WebElement userNameDisplayed;
+    @FindBy(xpath = "//*[@id='signup-view']/div[2]/div/div/p")
+    private static WebElement textCreateAccount;
 
-    public CreateAccount(WebDriver driver) {
-        super(driver);
-        PageFactory.initElements(driver, this);
-    }
-
-    public CreateAccount goToThePage() {
-        driver.get(baseURL);
-        return this;
-    }
+    @FindBy(xpath = "//*[@id='row_3']/div/div/div[2]/h2")
+    private static WebElement textDisplayed;
 
     public WebElement getSubscribe() {
         return subscribe;
@@ -70,7 +66,27 @@ public class CreateAccount extends BasePage{
         return submitBtn;
     }
 
-    public WebElement getUserNameDisplayed(){return userNameDisplayed;}
+    public WebElement getUserNameDisplayed(){return textDisplayed;}
 
+    public static String getTextCreateAccount(){
+        String text =  textCreateAccount.getText();
+        return text;
+    }
+
+    public static String getTextUserName(){
+        String text1 = textDisplayed.getText();
+        return text1;
+    }
+   /* public CreateAccount(WebDriver driver) {
+        super(driver);
+        PageFactory.initElements(driver, this);
+    }
+    public CreateAccount goToThePage() {
+        driver.get(baseURL);
+        return this;
+
+    }
+
+    */
 
 }

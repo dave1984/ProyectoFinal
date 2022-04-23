@@ -3,18 +3,21 @@ package steps;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.Step;
+import net.thucydides.core.annotations.Steps;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.CreateAccount;
+import utilities.PageGenerator;
 import utilities.Utilities;
 
 public class CreateAccountSteps {
 
     CreateAccount createAccount;
+
     @Step
-    public void openSite(){ createAccount.goToThePage();  }
+    public void openSite(){ createAccount.open(); }
 
     @Step
     public void clickOnSubscribeButton(){
@@ -50,9 +53,7 @@ public class CreateAccountSteps {
     public void clickOnCreateAccountButton(){
         createAccount.getSubmitBtn().sendKeys(Keys.ENTER);
     }
-    @Step
-    public WebElement userNameDisplayed(){
-        return createAccount.getUserNameDisplayed();
-    }
+
+
 
 }

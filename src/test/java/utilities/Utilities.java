@@ -35,4 +35,9 @@ public class Utilities {
         return  lastName;
     }
 
+    public static String randomTitle(){
+        String title = faker.name().title();
+        return  title;
+    }
+
 }
