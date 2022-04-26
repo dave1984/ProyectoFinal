@@ -5,7 +5,9 @@ import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 public class Hook {
+
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
@@ -17,10 +19,11 @@ public class Hook {
     }
 
     @Before
-    public static void setupClass() {
+    public void setupClass() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+
     }
 
     @After
@@ -29,4 +32,5 @@ public class Hook {
             driver.quit();
         }
     }
+
 }

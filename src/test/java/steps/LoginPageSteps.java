@@ -1,11 +1,20 @@
 package steps;
 
 import net.thucydides.core.annotations.Step;
+import org.openqa.selenium.WebDriver;
 import pages.LoginPage;
 import utilities.Utilities;
 
-public class LoginPageSteps {
-    LoginPage loginPage;
+public class LoginPageSteps extends Hook{
+
+    protected WebDriver driver = Hook.getDriver();
+
+    LoginPage loginPage = new LoginPage(driver);
+
+    @Step
+    public void clickOnLoginButton(){
+        loginPage.getLoginButton().click();
+    }
 
     @Step
     public void fillUserName(){
@@ -19,8 +28,19 @@ public class LoginPageSteps {
 
 
     @Step
-    public void getInitSession(){
+    public void clickOnInitSession(){
         loginPage.getInitSession().click();
+    }
+
+    @Step
+    public void fillInvalidUserName(){
+        loginPage.getUserName().click();
+        loginPage.getUserName().sendKeys(Utilities.randomInvalidUserName());
+    }
+
+    @Step
+    public String getMjeError(){
+        return loginPage.getMjeError().getText();
     }
 
 }

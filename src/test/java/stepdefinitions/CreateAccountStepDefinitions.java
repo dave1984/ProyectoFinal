@@ -10,27 +10,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.CreateAccount;
 import steps.CreateAccountSteps;
+import steps.Hook;
+import utilities.PageGenerator;
 
 import java.util.concurrent.TimeUnit;
 
 public class CreateAccountStepDefinitions {
 
-
     @Steps
-    WebDriver driver;
+    //protected WebDriver driver = Hook.getDriver();
     CreateAccountSteps createAccountSteps;
 
     @Given("I open the site into the browser")
-    public void iOpenTheSiteIntoTheBrowser() {
-       // PageGenerator.getInstance(CreateAccount.class, driver).goToThePage();
-       // createAccountSteps.openSite();
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\David\\OneDrive\\Documentos\\ProyectoFinal\\ProyectoFinal\\src\\test\\resources\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.get("https://es.surveymonkey.com/");
+    public void iOpenTheSiteIntoTheBrowser() throws Exception {
+        //PageGenerator.getInstance(CreateAccount.class, driver).openSite();
+        createAccountSteps.openWebSite();
     }
-
+/*
     @When("I click on subscribe button")
     public void iClickOnSubscribeButton() {
         createAccountSteps.clickOnSubscribeButton();
@@ -65,4 +61,6 @@ public class CreateAccountStepDefinitions {
         Assert.assertEquals(CreateAccount.getTextUserName(),"Encuestas recientes");
 
     }
+
+ */
 }

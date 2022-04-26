@@ -14,6 +14,11 @@ public class Utilities {
         return randomUserName;
     }
 
+    public static String randomInvalidUserName(){
+        String randomInvalidUserName = faker.name().username().concat("test");
+        return randomInvalidUserName;
+    }
+
     public static String randomPassword(){
         String randomPassword = faker.name().username() ;
         return randomPassword;

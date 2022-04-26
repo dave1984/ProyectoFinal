@@ -8,7 +8,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class CreateNewSurvey {
+public class CreateNewSurvey extends BasePage {
+
+    public CreateNewSurvey(WebDriver driver) {
+        super(driver);
+        PageFactory.initElements(driver, this);
+    }
 
     @FindBy(xpath = "//*[@id='row_3']/div/div/div[4]/div/div[2]/a")
     private WebElement createSurvey;
@@ -24,6 +29,15 @@ public class CreateNewSurvey {
 
     @FindBy(xpath = "//button[@class='wds-button wds-button--primary wds-button--solid wds-button--md']")
     private WebElement createSurveyEnd;
+
+    @FindBy(xpath = "//*[@id='row_3']/div/div/div[4]/ul/li/div[2]/ul[2]/div[2]/li/div/a/div[1]")
+    private WebElement optionButton;
+
+    @FindBy(xpath = "//*[@id='row_3']/div/div/div[4]/ul/li/div[2]/ul[2]/div[2]/li/div/ul/li[1]")
+    private WebElement editButton;
+
+    @FindBy(xpath = "//*[@id='pageid-26668842']/article/div[2]/section/form/div[3]/button[2]")
+    private WebElement listoButton;
 
 
     public WebElement getCreateSurvey() { return createSurvey; }
@@ -42,8 +56,11 @@ public class CreateNewSurvey {
         return createSurveyEnd;
     }
 
-    public CreateNewSurvey(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-    }
+    public WebElement getOptionButton() {return optionButton;}
+
+    public WebElement getEditButton(){return editButton;}
+
+    public  WebElement getListoButton(){return listoButton;}
+
 
 }

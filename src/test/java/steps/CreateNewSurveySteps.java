@@ -1,14 +1,18 @@
 package steps;
 
 import net.thucydides.core.annotations.Step;
+import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import pages.CreateAccount;
 import pages.CreateNewSurvey;
 import utilities.Utilities;
 
-public class CreateNewSurveySteps {
+public class CreateNewSurveySteps extends Hook{
 
-    CreateNewSurvey createNewSurvey;
+    protected WebDriver driver = Hook.getDriver();
+
+    CreateNewSurvey createNewSurvey = new CreateNewSurvey(driver);
 
     @Step
     public void clickOnCreateNewSurveyButton(){
@@ -17,12 +21,12 @@ public class CreateNewSurveySteps {
 
     @Step
     public void selectStartFromZero(){
-        createNewSurvey. getStartZero().click();
+        createNewSurvey.getStartZero().click();
     }
 
     @Step
     public void selectTitle(){
-        createNewSurvey. getSurveyTitle().click();
+        createNewSurvey.getSurveyTitle().click();
         createNewSurvey.getCreateSurvey().sendKeys(Utilities.randomTitle());
     }
 
@@ -32,8 +36,20 @@ public class CreateNewSurveySteps {
         Select surveyType1 = new Select(createNewSurvey.getSurveyType());
         surveyType1.selectByIndex(14);
     }
-    public void clickObCreateSurveyButton(){
-        createNewSurvey. getCreateSurveyEnd().click();  }
+    public void clickOnCreateSurveyButton(){
+        createNewSurvey.getCreateSurveyEnd().click();  }
 
+
+    public void clickOnOptionButton(){
+        createNewSurvey.getOptionButton().click();
+    }
+
+    public void clickOnEditButton(){
+        createNewSurvey.getEditButton().click();
+    }
+
+    public void verifyTextListoButton(){
+        Assert.assertEquals(createNewSurvey.getListoButton().getText(),"Listo");
+    }
 }
 

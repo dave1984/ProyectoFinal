@@ -4,14 +4,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-//import net.serenitybdd.core.pages.PageObject;
-//import net.thucydides.core.annotations.DefaultUrl;
-import org.openqa.selenium.By;
 
-//@DefaultUrl("https://www.google.com")
-public class CreateAccount {
+public class CreateAccount extends BasePage {
 
-   // private String baseURL ="https://es.surveymonkey.com/";
+    private String baseURL ="https://es.surveymonkey.com/";
+
+    public CreateAccount(WebDriver driver) {
+        super(driver);
+        PageFactory.initElements(driver, this);
+    }
+
+
+    public CreateAccount openSite() {
+        driver.get(baseURL);
+        return this;
+    }
 
     @FindBy(xpath = "//*[@id='root']/div/div[1]/div/div[3]/div/a[2]")
     private WebElement subscribe;
@@ -66,7 +73,7 @@ public class CreateAccount {
         return submitBtn;
     }
 
-    public WebElement getUserNameDisplayed(){return textDisplayed;}
+    //public WebElement getUserNameDisplayed(){return textDisplayed;}
 
     public static String getTextCreateAccount(){
         String text =  textCreateAccount.getText();
@@ -76,10 +83,6 @@ public class CreateAccount {
     public static String getTextUserName(){
         String text1 = textDisplayed.getText();
         return text1;
-    }
-
-   public CreateAccount(WebDriver driver) {
-        PageFactory.initElements(driver, this);
     }
 
 
