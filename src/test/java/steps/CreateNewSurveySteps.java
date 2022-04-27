@@ -10,9 +10,9 @@ import utilities.Utilities;
 
 public class CreateNewSurveySteps extends Hook{
 
-    protected WebDriver driver = Hook.getDriver();
+    //protected WebDriver driver = Hook.getDriver();
 
-    CreateNewSurvey createNewSurvey = new CreateNewSurvey(driver);
+    CreateNewSurvey createNewSurvey;// = new CreateNewSurvey(driver);
 
     @Step
     public void clickOnCreateNewSurveyButton(){
@@ -36,18 +36,22 @@ public class CreateNewSurveySteps extends Hook{
         Select surveyType1 = new Select(createNewSurvey.getSurveyType());
         surveyType1.selectByIndex(14);
     }
+
+    @Step
     public void clickOnCreateSurveyButton(){
         createNewSurvey.getCreateSurveyEnd().click();  }
 
-
+    @Step
     public void clickOnOptionButton(){
         createNewSurvey.getOptionButton().click();
     }
 
+    @Step
     public void clickOnEditButton(){
         createNewSurvey.getEditButton().click();
     }
 
+    @Step
     public void verifyTextListoButton(){
         Assert.assertEquals(createNewSurvey.getListoButton().getText(),"Listo");
     }

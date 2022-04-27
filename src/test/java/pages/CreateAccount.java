@@ -11,6 +11,7 @@ public class CreateAccount extends BasePage {
 
     public CreateAccount(WebDriver driver) {
         super(driver);
+        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 

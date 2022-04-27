@@ -12,6 +12,7 @@ public class CreateNewSurvey extends BasePage {
 
     public CreateNewSurvey(WebDriver driver) {
         super(driver);
+        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
