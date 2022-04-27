@@ -2,10 +2,12 @@ package stepdefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import net.thucydides.core.annotations.Steps;
 import steps.CreateNewSurveySteps;
 
 public class CreateNewSurveyStepDefinitions {
 
+    @Steps
     CreateNewSurveySteps createNewSurveySteps;
 
     @And("I click on create survey button")

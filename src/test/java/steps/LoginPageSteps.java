@@ -2,14 +2,21 @@ package steps;
 
 import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 import pages.LoginPage;
 import utilities.Utilities;
 
-public class LoginPageSteps extends Hook{
+public class LoginPageSteps extends Hook {
 
-    protected WebDriver driver = Hook.getDriver();
+    //protected WebDriver driver = Hook.getDriver();
 
     LoginPage loginPage = new LoginPage(driver);
+
+    public LoginPageSteps(WebDriver driver) {
+        super(driver);
+        this.driver=driver;
+        PageFactory.initElements(driver, this);
+    }
 
     @Step
     public void clickOnLoginButton(){

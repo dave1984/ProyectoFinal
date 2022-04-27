@@ -1,31 +1,33 @@
 package steps;
 
-//import net.serenitybdd.core.pages.WebElementFacade;
+
 import net.thucydides.core.annotations.Step;
-import org.openqa.selenium.Keys;
+import net.thucydides.core.annotations.Steps;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 import pages.CreateAccount;
-import utilities.PageGenerator;
-import utilities.Utilities;
 
-public class CreateAccountSteps extends Hook{
+public class CreateAccountSteps extends Hook {
 
-    protected WebDriver driver = Hook.getDriver();
+    protected WebDriver driver1= Hook.getDriver();
 
-    //CreateAccount createAccount= new CreateAccount(driver);
+    CreateAccount createAccount = new CreateAccount(driver1);
 
-
-   @Step
-   public void openWebSite() throws Exception {
-       PageGenerator.getInstance(CreateAccount.class, driver).openSite();
-       // createAccount.openSite();
+    public CreateAccountSteps(WebDriver driver) {
+        super(driver);
+        PageFactory.initElements(driver, this);
     }
-/*
+
+    @Step
+    public void openWebSite() throws Exception {
+        createAccount.openSite();
+    }
+
     @Step
     public void clickOnSubscribeButton(){
         createAccount.getSubscribe().click();
     }
-
+/*
     @Step
     public void fillAccountInformationUserName() {
         createAccount.getUserName().sendKeys(Utilities.randomUserName());

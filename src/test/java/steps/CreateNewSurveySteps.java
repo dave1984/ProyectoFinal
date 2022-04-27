@@ -3,16 +3,23 @@ package steps;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import pages.CreateAccount;
 import pages.CreateNewSurvey;
 import utilities.Utilities;
 
-public class CreateNewSurveySteps extends Hook{
+public class CreateNewSurveySteps extends Hook {
 
     //protected WebDriver driver = Hook.getDriver();
 
-    CreateNewSurvey createNewSurvey;// = new CreateNewSurvey(driver);
+    CreateNewSurvey createNewSurvey = new CreateNewSurvey(driver);
+
+    public CreateNewSurveySteps(WebDriver driver) {
+        super(driver);
+        this.driver=driver;
+        PageFactory.initElements(driver, this);
+    }
+
 
     @Step
     public void clickOnCreateNewSurveyButton(){

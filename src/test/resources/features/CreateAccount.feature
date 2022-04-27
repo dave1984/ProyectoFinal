@@ -4,9 +4,9 @@ Feature: Create an account
   Scenario: Open the new site
     Given I open the site into the browser
     When I click on subscribe button
-    Then I should see create account page
+  ##  Then I should see create account page
 
-  @Test
+  @Regression
    Scenario: Create a new account
     Given I open the site into the browser
     When I click on subscribe button
